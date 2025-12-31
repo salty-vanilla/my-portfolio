@@ -74,8 +74,6 @@ export interface SiteConfig {
   title: string;
   /** Site description for SEO and hero section */
   description: string;
-  /** Path to avatar/logo image */
-  avatar: string;
   /** Location/City */
   location: string;
   /** Contact email */
@@ -95,25 +93,24 @@ export interface SiteConfig {
  * Update these values to customize your portfolio
  */
 export const siteConfig: SiteConfig = {
-  name: "🌻 Bloomfolio",
-  title: "Astro Portfolio Template built with 🌼 DaisyUI",
+  name: "Shunsuke Nakatsuka",
+  title: "Computer Science Researcher & Software Engineer",
   description:
-    "A modern, responsive, and customizable portfolio template built with Astro and DaisyUI. Perfect for developers, designers, and creatives to showcase their work and skills.",
-  avatar: "../assets/bloomfolio.png",
-  location: "🇧🇷 Brazil",
-  email: "hello@example.com",
+    "Computer Vision / Industrial Anomaly Detection / Web & Cloud Systems — 研究成果を、Webとクラウド基盤で運用可能なプロダクトに落とし込みます。",
+  location: "Tokyo, Japan",
+  email: "contact@example.com",
   socialLinks: {
-    github: "https://github.com/lauroguedes",
-    linkedin: "https://linkedin.com/in/lauroguedes",
-    twitter: "https://twitter.com/leowg",
-    bluesky: "https://bsky.app/profile/lauroguedes.bsky.social",
-    instagram: "https://instagram.com/lauroguedes.dev",
-    youTube: "https://youtube.com/leowgweb",
-    codetips: "https://codetips.cloud/u/lauroguedes",
+    github: "https://github.com/salty-vanilla",
+    linkedin: "",
+    twitter: "https://x.com/_Shu_Nak",
+    bluesky: "",
+    instagram: "",
+    youTube: "",
+    codetips: "",
   },
-  enableThemeSelector: true,
+  enableThemeSelector: false,
   extraLinks: {
-    enable: true,
+    enable: false,
     links: [
       {
         link: "/blog/guides/bloomfolio-complete-guide",
@@ -138,12 +135,12 @@ export const siteConfig: SiteConfig = {
     ],
   },
   sections: {
-    about: true,
-    projects: true,
-    blog: true,
-    work: true,
-    education: true,
-    hackathons: true,
+    about: false,
+    projects: false,
+    blog: false,
+    work: false,
+    education: false,
+    hackathons: false,
     contact: true,
   },
 };

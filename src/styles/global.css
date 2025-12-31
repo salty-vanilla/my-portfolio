@@ -1,4 +1,25 @@
 @import "tailwindcss";
 @plugin "daisyui" {
-  themes: light --default, dark --prefersdark, synthwave, retro, valentine, dim;
+  themes: light --default;
 };
+
+/* Font Family */
+* {
+  font-family: "Outfit", "Zen Kaku Gothic New", -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+/* Minimalist Monochrome Base Styles */
+body {
+  @apply bg-white text-gray-900;
+}
+
+/* Smooth transitions for interactive elements */
+a,
+button {
+  @apply transition-colors duration-200;
+}
+
+/* Remove default styling for better control */
+* {
+  @apply antialiased;
+}

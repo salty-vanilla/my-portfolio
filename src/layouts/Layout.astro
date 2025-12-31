@@ -48,6 +48,12 @@ const origin = Astro.url.origin;
     <meta name="description" content={description} />
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="generator" content={Astro.generator} />
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700&display=swap" rel="stylesheet" />
+    
     <title>{title}</title>
 
     <!-- View Transitions -->
@@ -66,19 +72,12 @@ const origin = Astro.url.origin;
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={`${origin}/images/og_home.png`} />
   </head>
-  <body class="min-h-screen">
-    <!-- Theme Controls - Fixed Position -->
-    <div class="fixed top-4 right-4 z-50">
-      {siteConfig.enableThemeSelector ? <ThemeSelector /> : <ThemeToggle />}
-    </div>
+  <body class="min-h-screen bg-white">
+    <!-- Removed theme controls for minimalist design -->
 
     <slot />
 
-    {
-      siteConfig.extraLinks.enable && (
-        <FabFlower extraLinks={siteConfig.extraLinks} />
-      )
-    }
+    <!-- Removed FAB for minimalist design -->
 
     <!-- Smooth Scroll -->
     <style is:global>
