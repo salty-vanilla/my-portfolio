@@ -4,7 +4,17 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Bloomfolio is an Astro-based portfolio template using Tailwind CSS 4.x and DaisyUI for styling. The project follows Astro's standard project structure with file-based routing.
+This is a **minimal, monochrome portfolio website** for a **Computer Science Researcher & Software Engineer**. It showcases research (publications) and software projects (Web/Cloud) with equal weight.
+
+**Core Philosophy**: Research × Software × Web × Cloud. The UI is not the main focus—content and clarity are.
+
+**Based on**: Bloomfolio template (Astro 5.x + Tailwind CSS 4.x + DaisyUI)
+**Design Approach**: Minimalistic design philosophy (whitespace, hierarchy, subtraction)
+
+> **Key Documents**:
+> - `DEVELOPMENT.md` - Overall development strategy
+> - `.github/instructions/design-rules.instructions.md` - Design & styling rules
+> - `.github/instructions/content-structure.instructions.md` - Content guidelines
 
 ## Development Commands
 
@@ -77,62 +87,113 @@ src/
 
 2. **Global CSS Import**: Only import `global.css` in the main layout to avoid duplicate Tailwind imports
 
-3. **Styling Priority**: Use Tailwind utility classes first, then DaisyUI components, and component-scoped `<style>` tags for custom styling only when necessary
+3. **Styling Priority**: Use Tailwind utility classes first, minimal DaisyUI (layout only), avoid colorful components
 
 4. **TypeScript**: Astro's strict TypeScript config is enabled - expect type checking on component props and imports
 
-## Template Structure
+## Design Rules (CRITICAL)
 
-Bloomfolio is designed as a portfolio website template with the following sections and components:
+### Color Palette
+- **Almost monochrome only**: gray-50 to gray-900, white, black
+- **No accent colors** (blue-500, green-600, etc.)
+- **Reference site**: [Nagi](https://nagi-6tu.pages.dev/)
 
-### Hero Section (Component)
-- Title
-- Description
-- Avatar
+### Spacing & Layout
+- **Generous whitespace**: `py-16 md:py-24 lg:py-32` between sections
+- **Breathing room**: Lower information density
+- **Max width**: `max-w-4xl lg:max-w-5xl`
 
-### About Section (Component)
-- Title
-- Description
+### Typography
+- Headings: `text-4xl md:text-5xl`, `font-bold`
+- Body: `text-base md:text-lg`, `font-normal`
+- Line height: `leading-relaxed`
 
-### Work Section (Component + Content Loaded)
-- Company Name
-- Position
-- Position Description
-- Period (e.g., May 2012 - Feb 2020)
+### Shadows & Borders
+- Shadows: `shadow-sm` or none (never `shadow-lg`)
+- Borders: `border-gray-200` or `border-gray-300`
+- Rounded: `rounded-lg` or `rounded-xl`
 
-### Education Section (Component + Content Loaded)
-- University Name
-- Course Name
-- Description
-- Period (e.g., May 2012 - Feb 2020)
-- Link to college website
+### DaisyUI Usage
+- ✅ Layout utilities only (`container`, `prose`)
+- ❌ Colorful components (`btn-primary`, `alert-success`, `badge-accent`)
 
-### Projects Section (Component + Content Loaded)
-- Image
-- Title
-- Period (e.g., May 2012 - Feb 2020)
-- Description
-- Skills
-- Link Demo
-- Link Source
+> **See**: `.github/instructions/design-rules.instructions.md` for complete rules
 
-### Hackathon Section (Component + Content Loaded)
-- Period (e.g., Nov 23rd - 25th, 2018)
-- Title
-- Location
-- Description
-- Link Source
+## Site Structure
 
-### Contact Section (Component)
-Contact information
+### Homepage (`/`)
+1. Hero - Computer Science Researcher & Software Engineer
+2. Highlights - Research / Software / Cloud
+3. Featured Projects (3 items)
+4. Research (own publications only)
+5. Skills
+6. Writing (Zenn links)
+7. Links
 
-### Blog Page (Page + Content Loaded)
-- Image
-- Title
-- Publish Date
-- Content
+### Other Pages
+- `/projects` - All projects
+- `/research` - All research/publications
+- `/cv` - Resume (PDF + web version)
+- `/about` - About me
+- `/links` - External links
+
+## Content Structure (CRITICAL)
+
+### Projects & Research Format
+
+**Problem / Approach / Impact** structure (NOT tech stack badges):
+
+```markdown
+---
+title: "Project Name"
+description: "One-line description"
+date: 2024-01-15
+url: "https://..."
+github: "https://github.com/..."
+---
+
+## Problem
+What problem does this solve?
+
+## Approach
+How did you approach it?
+
+## Impact
+What was the result/impact?
+```
+
+### Research Content
+- **Own research only** (no paper summaries or surveys)
+- Same Problem/Approach/Impact structure
+- Include: venue, authors, pdf, arxiv, code
+
+### Prohibited
+- ❌ Technology badges
+- ❌ "Technologies Used" sections
+- ❌ Others' paper summaries/surveys (→ separate site)
+
+> **See**: `.github/instructions/content-structure.instructions.md` for complete rules
+
+## Hero Section Content
+
+```
+Title: Computer Science Researcher & Software Engineer
+Subtitle: Computer Vision / Industrial Anomaly Detection / Web & Cloud Systems
+Description: 研究成果を、Webとクラウド基盤で運用可能なプロダクトに落とし込みます。
+
+CTAs:
+- Primary: View Projects
+- Secondary: View CV
+- Link: Research & Publications
+- Link: Paper Archive (external site)
+```
 
 ## Development Workflow
+
+### Before Implementing
+1. Read `DEVELOPMENT.md` for overall strategy
+2. Check `.github/instructions/design-rules.instructions.md` for styling
+3. Check `.github/instructions/content-structure.instructions.md` for content format
 
 ### MCP Tools for Documentation
 

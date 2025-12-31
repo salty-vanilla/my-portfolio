@@ -1,35 +1,62 @@
-# 🌻 Bloomfolio
+# Portfolio - Computer Science Researcher & Software Engineer
 
-<div align="center">
+A minimal, monochrome portfolio website showcasing research and software projects with equal weight.
 
-A modern, customizable portfolio template built with **Astro 5** and **DaisyUI 5**. A beautiful, fast, and highly customizable portfolio template for developers, designers, and creatives.
+**Purpose**: Job hunting portfolio demonstrating expertise in **Computer Science Research** and **Software Engineering** (Web/Cloud).
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
-[![Astro](https://img.shields.io/badge/Astro-5.x-FF5D01?logo=astro&logoColor=white)](https://astro.build)
-[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-4.x-38B2AC?logo=tailwind-css&logoColor=white)](https://tailwindcss.com)
-[![DaisyUI](https://img.shields.io/badge/DaisyUI-5.x-5A0EF8?logo=daisyui&logoColor=white)](https://daisyui.com)
-[![TypeScript](https://img.shields.io/badge/TypeScript-5.x-3178C6?logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+**Based on**: [Bloomfolio](https://github.com/lauroguedes/bloomfolio) template
+**Design Philosophy**: Minimalistic approach with focus on content over decoration
 
-</br>
+---
 
-<img width="1920" height="1080" alt="img1" src="https://github.com/user-attachments/assets/b882118c-2070-4b12-85f4-8491ea9517ee" />
+## 📋 Documentation Structure
 
-</div>
+| Document | Purpose | Audience |
+|----------|---------|----------|
+| `DEVELOPMENT.md` | Overall development strategy & philosophy | All contributors |
+| `.github/instructions/design-rules.instructions.md` | Design & styling rules (monochrome, minimal) | Copilot, developers |
+| `.github/instructions/content-structure.instructions.md` | Content format (Problem/Approach/Impact) | Content writers, Copilot |
+| `CLAUDE.md` | Quick reference for Claude Code | Claude AI |
+| `src/content/projects/README.md` | Projects content guide | Content writers |
+| `src/content/research/README.md` | Research content guide | Content writers |
 
-## ✨ Features
+---
 
-- 🎨 **6 Built-in Themes** - Light, Dark, Synthwave, Retro, Valentine, and Dim
-- 📝 **6 Content Collections** - Blog, Projects, Work, Education, Hackathons, and About
-- 🔒 **Type-Safe Content** - Full TypeScript support with validated schemas
-- 📱 **Fully Responsive** - Mobile-first design with DaisyUI components
-- ⚡ **Fast & Optimized** - Static site generation with automatic image optimization
-- 🎭 **Smooth Transitions** - Page transitions using Astro's View Transitions API
-- 📦 **MDX Support** - Enhanced markdown with component imports (Spotify, YouTube, Twitter)
-- 🎯 **Configuration-Driven** - Customize everything through a central config file
-- 🌸 **FAB Flower Menu** - Expandable floating action button for extra links
-- 🎨 **Modern Stack** - Astro 5 + Tailwind CSS 4 + DaisyUI 5 + TypeScript
-- 🔍 **SEO Optimized** - Meta tags, Open Graph, and semantic HTML
-- ♿ **Accessible** - Built with accessibility in mind
+## 🎨 Design Principles
+
+- **Monochrome**: Gray-scale only (no accent colors)
+- **Minimal**: Generous whitespace, low information density
+- **Calm**: Shadows minimal or none, subtle borders
+- **Content-first**: UI is not the main focus
+
+**Reference**: [Nagi](https://nagi-6tu.pages.dev/)
+
+---
+
+## 🏗️ Site Structure
+
+### Pages
+- `/` - Hero, Highlights, Featured Projects, Research, Skills, Writing, Links
+- `/projects` - All projects
+- `/research` - All research/publications
+- `/cv` - Resume (PDF + web)
+- `/about` - About me
+- `/links` - External links
+
+### Content Format
+All projects and research follow **Problem / Approach / Impact** structure (no tech stack badges).
+
+---
+
+## ⚡ Tech Stack
+
+- **Astro 5.x** - Static site generator
+- **Tailwind CSS 4.x** - Styling
+- **DaisyUI 5.x** - UI components (minimal usage)
+- **TypeScript** - Type safety
+- **Markdown/MDX** - Content management
+
+---
 
 ## 🚀 Quick Start
 
@@ -42,10 +69,10 @@ A modern, customizable portfolio template built with **Astro 5** and **DaisyUI 5
 
 ```bash
 # Clone the repository
-git clone https://github.com/lauroguedes/bloomfolio.git
+git clone https://github.com/salty-vanilla/my-portfolio.git
 
 # Navigate to the project directory
-cd bloomfolio
+cd my-portfolio
 
 # Install dependencies
 pnpm install
@@ -71,106 +98,170 @@ All commands are run from the root of the project:
 
 ## ⚙️ Configuration
 
-All site configuration is centralized in `src/config.ts`. Edit this file to customize your portfolio.
+## ⚙️ Configuration
 
-### Basic Information
+Main configuration is in `src/config.ts`. See `DEVELOPMENT.md` for detailed customization guidelines.
 
-```typescript
-export const siteConfig: SiteConfig = {
-  name: "Your Name",
-  title: "Your Professional Title",
-  description: "Brief description of your portfolio",
-  avatar: "../assets/your-avatar.png",
-  location: "Your City, Country",
-  email: "your@email.com",
-  // ...
-};
+### Key Configuration Areas
+
+- **Basic Info**: Name, title, description, avatar
+- **Social Links**: GitHub, LinkedIn, Zenn, etc.
+- **Section Visibility**: Control which sections appear
+- **Theme**: Monochrome design (custom styling overrides default themes)
+
+---
+
+## 📝 Content Guidelines
+
+### Projects & Research Format
+
+All content follows **Problem / Approach / Impact** structure:
+
+```markdown
+---
+title: "Project Name"
+description: "One-line description"
+date: 2024-01-15
+---
+
+## Problem
+What problem does this solve?
+
+## Approach
+How did you approach it?
+
+## Impact
+What was the result/impact?
 ```
 
-### Social Links
+### Prohibited
+- ❌ Technology stack badges
+- ❌ "Technologies Used" sections
+- ❌ Others' paper summaries (only your own research)
 
-Add your social media profiles:
+**Details**: See `.github/instructions/content-structure.instructions.md`
 
-```typescript
-socialLinks: {
-  github: "https://github.com/username",
-  linkedin: "https://linkedin.com/in/username",
-  twitter: "https://twitter.com/username",
-  bluesky: "https://bsky.app/profile/username",
-  instagram: "https://instagram.com/username",
-  youTube: "https://youtube.com/@username",
-  codetips: "https://codetips.cloud/u/username",
-}
-```
+---
 
-### Section Visibility
+## 🎨 Design Guidelines
 
-Control which sections appear on your homepage:
+When implementing components:
+- Use **gray-scale only** (no accent colors)
+- **Generous whitespace** between sections
+- **Minimal shadows** (`shadow-sm` or none)
+- **Subtle borders** (`border-gray-200/300`)
+- Avoid DaisyUI colorful components
 
-```typescript
-sections: {
-  about: true,      // About section
-  projects: true,   // Projects showcase
-  blog: true,       // Latest blog posts (shows 3 most recent)
-  work: true,       // Work experience timeline
-  education: true,  // Education history
-  hackathons: true, // Hackathon participation
-  contact: true,    // Contact section
-}
-```
+**Details**: See `.github/instructions/design-rules.instructions.md`
 
-Set any section to `false` to hide it. The Hero section is always visible.
-
-### Theme Settings
-
-Choose between a theme selector dropdown or a simple light/dark toggle:
-
-```typescript
-enableThemeSelector: true  // true = dropdown with 6 themes, false = toggle
-```
-
-**Available Themes**: light, dark, synthwave, retro, valentine, dim
-
-### Extra Links (FAB Flower)
-
-Configure the floating action button menu:
-
-```typescript
-extraLinks: {
-  enable: true,
-  links: [
-    { link: "/blog/guide", icon: BookOpen, label: "Guide" },
-    { link: "/resume.pdf", icon: FileUser, label: "Resume" },
-    // Add more links...
-  ],
-}
-```
+---
 
 ## 📂 Project Structure
 
 ```
-bloomfolio/
+my-portfolio/
 ├── public/              # Static assets
-│   └── favicon.svg
 ├── src/
 │   ├── assets/         # Images and media
-│   │   └── bloomfolio.png
 │   ├── components/     # Reusable components
-│   │   ├── About.astro
-│   │   ├── Blog.astro
-│   │   ├── BlogCard.astro
-│   │   ├── Contact.astro
-│   │   ├── FabFlower.astro
-│   │   ├── Hackathons.astro
 │   │   ├── Hero.astro
-│   │   ├── ProjectCard.astro
 │   │   ├── Projects.astro
-│   │   ├── SkillBadge.astro
-│   │   ├── Spotify.astro
-│   │   ├── ThemeSelector.astro
-│   │   ├── ThemeToggle.astro
-│   │   ├── Timeline.astro
-│   │   ├── Twitter.astro
+│   │   ├── ProjectCard.astro
+│   │   └── ...
+│   ├── content/        # Content collections
+│   │   ├── projects/   # Project entries (Problem/Approach/Impact)
+│   │   ├── research/   # Research/publications (own work only)
+│   │   ├── work/       # Work experience
+│   │   ├── education/  # Education history
+│   │   ├── about/      # About section
+│   │   └── blog/       # Blog posts (linked from Zenn)
+│   ├── layouts/        # Layout templates
+│   │   ├── Layout.astro
+│   │   ├── BlogLayout.astro
+│   │   └── ProjectLayout.astro
+│   ├── pages/          # File-based routing
+│   │   ├── index.astro
+│   │   ├── projects/
+│   │   ├── research/
+│   │   ├── cv/
+│   │   └── ...
+│   ├── styles/         # Global CSS
+│   │   └── global.css
+│   ├── config.ts       # Site configuration
+│   └── content.config.ts
+├── .github/
+│   └── instructions/   # Copilot/Claude instructions
+│       ├── design-rules.instructions.md
+│       └── content-structure.instructions.md
+├── DEVELOPMENT.md      # Development strategy
+├── CLAUDE.md          # Claude Code reference
+└── README.md          # This file
+```
+
+---
+
+## 📋 Commands
+
+All commands are run from the root of the project:
+
+| Command | Action |
+| :--- | :--- |
+| `pnpm install` | Install dependencies |
+| `pnpm run dev` | Start dev server at `localhost:4321` |
+| `pnpm run build` | Build production site to `./dist/` |
+| `pnpm run preview` | Preview production build locally |
+| `pnpm run astro check` | Run TypeScript and Astro checks |
+
+---
+
+## 🧭 External Content Strategy
+
+| Content Type | Location | Notes |
+|--------------|----------|-------|
+| Technical blog | [Zenn](https://zenn.dev/) | Portfolio links to articles |
+| Paper summaries/surveys | Separate paper archive site | Not in this portfolio |
+| Own research | This portfolio | Research section |
+
+---
+
+## 🚢 Deployment
+
+This project can be deployed to:
+- **GitHub Pages**
+- **Vercel**
+- Any static hosting service
+
+Build command: `pnpm run build`  
+Output directory: `./dist/`
+
+---
+
+## 📚 Additional Documentation
+
+- `DEVELOPMENT.md` - Complete development philosophy and strategy
+- `CLAUDE.md` - Quick reference for Claude Code
+- `.github/instructions/design-rules.instructions.md` - Design implementation rules
+- `.github/instructions/content-structure.instructions.md` - Content format guidelines
+- `src/content/projects/README.md` - Projects content guide
+- `src/content/research/README.md` - Research content guide
+
+---
+
+## 📄 License
+
+MIT License - see `LICENSE` file for details.
+
+---
+
+## 🙏 Credits
+
+Based on [Bloomfolio](https://github.com/lauroguedes/bloomfolio) by Lauro Guedes.  
+Design philosophy inspired by [Minimalistic Portfolio](https://github.com/shonebinu/portfolio/).
+
+---
+
+**Built with**: Astro 5 × Tailwind CSS 4 × TypeScript  
+**Philosophy**: Minimal, Monochrome, Content-First
 │   │   └── YouTube.astro
 │   ├── content/        # Content collections
 │   │   ├── about/     # About section (1 file)
