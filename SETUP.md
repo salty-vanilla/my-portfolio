@@ -6,18 +6,18 @@ This guide will help you set up and customize your Bloomfolio portfolio template
 
 1. **Install dependencies:**
    ```bash
-   npm install
+   pnpm install
    ```
 
 2. **Start development server:**
    ```bash
-   npm run dev
+   pnpm run dev
    ```
    Visit `http://localhost:4321` to see your portfolio.
 
 3. **Build for production:**
    ```bash
-   npm run build
+   pnpm run build
    ```
 
 ## 📝 Customization
@@ -199,10 +199,10 @@ bloomfolio/
 ## 📦 Available Commands
 
 ```bash
-npm run dev          # Start development server
-npm run build        # Build for production
-npm run preview      # Preview production build
-npm run astro        # Run Astro CLI commands
+pnpm run dev          # Start development server
+pnpm run build        # Build for production
+pnpm run preview      # Preview production build
+pnpm run astro        # Run Astro CLI commands
 ```
 
 ## 🎯 Next Steps

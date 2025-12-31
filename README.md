@@ -36,7 +36,7 @@ A modern, customizable portfolio template built with **Astro 5** and **DaisyUI 5
 ### Prerequisites
 
 - Node.js 18+ or 20+
-- npm, pnpm, or yarn
+- pnpm (recommended), npm, or yarn
 
 ### Installation
 
@@ -48,10 +48,10 @@ git clone https://github.com/lauroguedes/bloomfolio.git
 cd bloomfolio
 
 # Install dependencies
-npm install
+pnpm install
 
 # Start the development server
-npm run dev
+pnpm run dev
 ```
 
 Visit `http://localhost:4321` to see your portfolio!
@@ -62,12 +62,12 @@ All commands are run from the root of the project:
 
 | Command | Action |
 | :--- | :--- |
-| `npm install` | Install dependencies |
-| `npm run dev` | Start dev server at `localhost:4321` |
-| `npm run build` | Build production site to `./dist/` |
-| `npm run preview` | Preview production build locally |
-| `npm run astro check` | Run TypeScript and Astro checks |
-| `npm run astro ...` | Run Astro CLI commands |
+| `pnpm install` | Install dependencies |
+| `pnpm run dev` | Start dev server at `localhost:4321` |
+| `pnpm run build` | Build production site to `./dist/` |
+| `pnpm run preview` | Preview production build locally |
+| `pnpm run astro check` | Run TypeScript and Astro checks |
+| `pnpm run astro ...` | Run Astro CLI commands |
 
 ## ⚙️ Configuration
 
@@ -297,7 +297,7 @@ Add custom CSS in component `<style>` tags or extend `src/styles/global.css`:
 ### Build for Production
 
 ```bash
-npm run build
+pnpm run build
 ```
 
 Output is generated in `dist/` directory.
@@ -313,13 +313,13 @@ Output is generated in `dist/` directory.
 ### Deploy to Netlify
 
 1. Connect your repository
-2. Build command: `npm run build`
+2. Build command: `pnpm run build`
 3. Publish directory: `dist`
 
 ### Deploy to Cloudflare Pages
 
 1. Connect your repository
-2. Build command: `npm run build`
+2. Build command: `pnpm run build`
 3. Build output directory: `dist`
 
 ### Other Platforms

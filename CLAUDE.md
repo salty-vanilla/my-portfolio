@@ -10,22 +10,22 @@ Bloomfolio is an Astro-based portfolio template using Tailwind CSS 4.x and Daisy
 
 ```bash
 # Install dependencies
-npm install
+pnpm install
 
 # Start development server (localhost:4321)
-npm run dev
+pnpm run dev
 
 # Build for production (outputs to ./dist/)
-npm run build
+pnpm run build
 
 # Preview production build locally
-npm run preview
+pnpm run preview
 
 # Run Astro CLI commands
-npm run astro -- <command>
+pnpm run astro -- <command>
 
 # Type checking
-npm run astro check
+pnpm run astro check
 ```
 
 ## Architecture
