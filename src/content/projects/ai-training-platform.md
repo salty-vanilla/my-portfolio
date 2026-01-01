@@ -2,7 +2,7 @@
 title: "AI Training Platform for Visual Inspection"
 titleJa: "検査AI学習プラットフォーム"
 description: "Full-stack platform integrating frontend, backend, and ML training pipeline for visual inspection AI"
-image: "https://api.dicebear.com/9.x/glass/svg?seed=AIPlatform"
+image: "../../assets/ai-training-platform.webp"
 startDate: "2022-06-01"
 endDate: "2023-05-31"
 skills: ["Vue", "Flask", "TensorFlow", "AWS", "Docker", "PostgreSQL", "Redis"]

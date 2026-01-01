@@ -2,7 +2,7 @@
 title: "Automated Visual Inspection System Deployment"
 titleJa: "自動外観検査設備の実導入"
 description: "End-to-end deployment of automated visual inspection equipment in production environment"
-image: "https://api.dicebear.com/9.x/glass/svg?seed=AutoInspection"
+image: "../../assets/automated-visual-inspection.webp"
 startDate: "2023-01-01"
 endDate: "2023-12-31"
 skills: ["Computer Vision", "Optical Design", "Manufacturing", "Python", "OpenCV", "Industrial Automation"]

@@ -2,7 +2,7 @@
 title: "Drawing Analysis–Based Estimation RPA System"
 titleJa: "図面解析による見積積算RPAシステム"
 description: "RPA system using drawing analysis AI for automated cost estimation, from internal tool to external product"
-image: "https://api.dicebear.com/9.x/glass/svg?seed=DrawingRPA"
+image: "../../assets/drawing-analysis-rpa.webp"
 startDate: "2023-06-01"
 skills: ["React", "NestJS", "ONNX Runtime", "AWS", "TypeScript", "PostgreSQL", "Docker", "Python"]
 featured: true
