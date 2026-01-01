@@ -1,0 +1,43 @@
+---
+import { getCollection } from "astro:content";
+import SkillBadge from "./SkillBadge.astro";
+
+const skillEntries = await getCollection("skills");
+
+// Sort by order
+const sortedSkills = skillEntries.sort((a, b) => a.data.order - b.data.order);
+---
+
+<section id="skills" class="py-12 px-4">
+  <div class="max-w-6xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-4xl font-bold mb-4">Skills</h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+      {
+        sortedSkills.map((skill) => (
+          <div class="card bg-base-100 border border-base-300 rounded-2xl">
+            <div class="card-body">
+              <h3 class="card-title text-2xl mb-4">{skill.data.category}</h3>
+              <div class="space-y-4">
+                {skill.data.items.map((item) => (
+                  <div class="flex flex-col md:flex-row md:items-center gap-2 md:gap-4">
+                    <h4 class="font-semibold text-base-content/80 md:min-w-[200px]">
+                      {item.label}
+                    </h4>
+                    <div class="flex flex-wrap gap-2">
+                      {item.values.map((value) => (
+                        <SkillBadge skill={value} />
+                      ))}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        ))
+      }
+    </div>
+  </div>
+</section>

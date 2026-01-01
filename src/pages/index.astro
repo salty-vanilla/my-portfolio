@@ -4,6 +4,8 @@ import Hero from "../components/Hero.astro";
 import About from "../components/About.astro";
 import Timeline from "../components/Timeline.astro";
 import Projects from "../components/Projects.astro";
+import Skills from "../components/Skills.astro";
+import Research from "../components/Research.astro";
 import Blog from "../components/Blog.astro";
 import Hackathons from "../components/Hackathons.astro";
 import Contact from "../components/Contact.astro";
@@ -48,6 +50,12 @@ const { Content: AboutContent } = await render(aboutEntry);
 
     <!-- Blog Section -->
     {siteConfig.sections.blog && <Blog />}
+
+    <!-- Research Section -->
+    {siteConfig.sections.research && <Research />}
+
+    <!-- Skills Section -->
+    {siteConfig.sections.skills && <Skills />}
 
     <!-- Work Experience Section -->
     {

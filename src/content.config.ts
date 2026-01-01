@@ -78,6 +78,31 @@ const about = defineCollection({
   }),
 });
 
+// Skills collection
+const skills = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/skills" }),
+  schema: z.object({
+    category: z.string(),
+    order: z.number(),
+    items: z.array(
+      z.object({
+        label: z.string(),
+        values: z.array(z.string()),
+      })
+    ),
+  }),
+});
+
+// Research collection
+const research = defineCollection({
+  loader: glob({ pattern: "**/*.md", base: "./src/content/research" }),
+  schema: z.object({
+    title: z.string(),
+    topics: z.array(z.string()),
+    description: z.string(),
+  }),
+});
+
 export const collections = {
   work,
   education,
@@ -85,4 +110,6 @@ export const collections = {
   hackathons,
   blog,
   about,
+  skills,
+  research,
 };

@@ -1,0 +1,31 @@
+---
+import { getEntry } from "astro:content";
+
+const researchEntry = await getEntry("research", "research");
+---
+
+<section id="research" class="py-12 px-4">
+  <div class="max-w-4xl mx-auto">
+    <div class="text-center">
+      <h2 class="text-3xl md:text-4xl font-bold tracking-tight">
+        {researchEntry!.data.title}
+      </h2>
+
+      <!-- Topics badges -->
+      <div class="mt-5 flex flex-wrap justify-center gap-3">
+        {researchEntry!.data.topics.map((t) => (
+          <span class="badge badge-outline badge-lg text-base badge-neutral">
+            {t}
+          </span>
+        ))}
+      </div>
+
+      <p class="mt-6 text-base md:text-lg text-base-content/70 leading-relaxed max-w-2xl mx-auto">
+        {researchEntry!.data.description}
+      </p>
+
+      <!-- optional: subtle divider to separate from next section -->
+      <!-- <div class="mt-10 h-px w-16 mx-auto bg-base-content/10" /> -->
+    </div>
+  </div>
+</section>
