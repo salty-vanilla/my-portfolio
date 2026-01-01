@@ -1,0 +1,102 @@
+---
+/**
+ * Featured Projects Component
+ * 
+ * Displays up to 3 carefully selected projects that demonstrate:
+ * - Research × Software × Implementation balance
+ * - Problem → Role → Tech → Impact flow
+ * - Supports the narrative built by Research & Skills sections
+ * 
+ * Projects are loaded from content/projects/*.md with featured: true
+ */
+
+import { getCollection } from "astro:content";
+
+const projectEntries = await getCollection("projects");
+
+// Filter featured projects and sort by featuredOrder
+const featuredProjects = projectEntries
+  .filter((project) => project.data.featured === true)
+  .sort((a, b) => (a.data.featuredOrder ?? 999) - (b.data.featuredOrder ?? 999))
+  .slice(0, 3); // Max 3 projects
+---
+
+<section id="featured-projects" class="py-16 md:py-24 px-4">
+  <div class="max-w-5xl mx-auto">
+    <!-- Section Header -->
+    <div class="text-center mb-12 md:mb-16">
+      <h2 class="text-3xl md:text-4xl font-bold mb-4 text-gray-900">Featured Projects</h2>
+      <p class="text-base md:text-lg text-gray-600 leading-relaxed max-w-3xl mx-auto">
+        Selected projects demonstrating research-driven implementation with measurable business impact.
+      </p>
+    </div>
+
+    <!-- Project Cards Grid -->
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 md:gap-8">
+      {featuredProjects.map((project) => (
+        <article class="bg-white border border-gray-200 rounded-xl p-6 hover:border-gray-300 transition-colors">
+          <!-- Title -->
+          <h3 class="text-xl font-semibold text-gray-900 mb-1">
+            <a href={`/projects/${project.id}`} class="hover:text-gray-700 transition-colors">
+              {project.data.title}
+            </a>
+          </h3>
+          
+          <!-- Japanese Title -->
+          {project.data.titleJa && (
+            <p class="text-sm text-gray-500 mb-3">
+              {project.data.titleJa}
+            </p>
+          )}
+
+          <!-- Description -->
+          <p class="text-sm text-gray-600 mb-4 leading-relaxed">
+            {project.data.description}
+          </p>
+
+          <!-- Role -->
+          {project.data.role && (
+            <p class="text-sm text-gray-700 mb-4">
+              {project.data.role}
+            </p>
+          )}
+
+          <!-- Key Tech (Max 2 lines) -->
+          <div class="flex flex-wrap gap-2 mb-6 max-h-20 overflow-hidden">
+            {project.data.skills.map((tech) => (
+              <span class="badge badge-sm badge-neutral badge-outline">
+                {tech}
+              </span>
+            ))}
+          </div>
+
+          <!-- Link -->
+          <div class="pt-4 border-t border-gray-200">
+            <a 
+              href={`/projects/${project.id}`}
+              class="inline-flex items-center text-sm font-medium text-gray-900 hover:text-gray-600 transition-colors"
+            >
+              View details
+              <svg class="ml-1 w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+              </svg>
+            </a>
+          </div>
+        </article>
+      ))}
+    </div>
+
+    <!-- View All Link -->
+    <div class="mt-12 text-center">
+      <a 
+        href="/projects" 
+        class="inline-flex items-center px-6 py-3 text-base font-medium text-gray-900 border border-gray-900 rounded-lg hover:bg-gray-900 hover:text-white transition-colors"
+      >
+        View all projects
+        <svg class="ml-2 w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+        </svg>
+      </a>
+    </div>
+  </div>
+</section>

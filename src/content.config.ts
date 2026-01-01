@@ -32,6 +32,7 @@ const projects = defineCollection({
   loader: glob({ pattern: "**/*.md", base: "./src/content/projects" }),
   schema: ({ image }) => z.object({
     title: z.string(),
+    titleJa: z.string().optional(),
     description: z.string(),
     image: image(),
     startDate: z.coerce.date(),
@@ -39,6 +40,10 @@ const projects = defineCollection({
     skills: z.array(z.string()),
     demoLink: z.string().url().optional(),
     sourceLink: z.string().url().optional(),
+    featured: z.boolean().default(false),
+    featuredOrder: z.number().optional(),
+    role: z.string().optional(),
+    impact: z.string().optional(),
   }),
 });
 

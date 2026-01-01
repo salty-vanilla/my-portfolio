@@ -50,6 +50,8 @@ export interface ExtraLinks {
 export interface SectionsConfig {
   /** Show/hide About section */
   about: boolean;
+  /** Show/hide Featured Projects section (up to 3 curated projects) */
+  featuredProjects: boolean;
   /** Show/hide Projects section */
   projects: boolean;
   /** Show/hide Blog section */
@@ -140,6 +142,7 @@ export const siteConfig: SiteConfig = {
   },
   sections: {
     about: false,
+    featuredProjects: true,
     projects: false,
     blog: false,
     skills: true,
