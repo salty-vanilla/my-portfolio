@@ -6,7 +6,7 @@ image: "../../assets/drawing-analysis-rpa.webp"
 startDate: "2023-06-01"
 skills: ["React", "NestJS", "ONNX Runtime", "AWS", "TypeScript", "PostgreSQL", "Docker", "Python"]
 featured: true
-featuredOrder: 1
+featuredOrder: 3
 role: "Full-stack development, AI inference engine implementation, product expansion"
 impact: "Automated 80% of estimation tasks, expanded from internal use to external product offering"
 ---

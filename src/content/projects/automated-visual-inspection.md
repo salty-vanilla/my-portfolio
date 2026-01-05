@@ -7,7 +7,7 @@ startDate: "2023-01-01"
 endDate: "2023-12-31"
 skills: ["Computer Vision", "Optical Design", "Manufacturing", "Python", "OpenCV", "Industrial Automation"]
 featured: true
-featuredOrder: 3
+featuredOrder: 2
 role: "Algorithm implementation, optical system design, equipment selection, factory deployment"
 impact: "Reduced inspection time by 70%, achieved 99.5% accuracy in defect detection"
 ---

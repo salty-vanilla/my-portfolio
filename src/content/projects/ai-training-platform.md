@@ -12,7 +12,7 @@ skills:
   - Python
   - TypeScript
 featured: true
-featuredOrder: 2
+featuredOrder: 1
 role: "System architecture design, full-stack development, ML training pipeline integration"
 startDate: "2021-06-01"
 endDate: "2023-03-31"
