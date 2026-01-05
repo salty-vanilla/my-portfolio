@@ -9,8 +9,9 @@ skills:
   - ML Training Pipeline
   - AWS
   - Docker
-  - Python
-  - TypeScript
+  - TensorFlow
+  - Vue.js
+  - Flask
 featured: true
 featuredOrder: 1
 role: "System architecture design, full-stack development, ML training pipeline integration"
