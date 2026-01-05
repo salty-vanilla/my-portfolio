@@ -19,6 +19,7 @@ export interface SocialLinks {
   instagram?: string;
   youTube?: string;
   codetips?: string;
+  googleScholar?: string;
 }
 
 /**
@@ -113,6 +114,7 @@ export const siteConfig: SiteConfig = {
     instagram: "",
     youTube: "",
     codetips: "",
+    googleScholar: "https://scholar.google.co.jp/citations?user=bxGZwroAAAAJ&hl=ja",
   },
   enableThemeSelector: false,
   extraLinks: {
