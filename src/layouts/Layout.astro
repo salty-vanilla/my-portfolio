@@ -56,8 +56,8 @@ const origin = Astro.url.origin;
     
     <title>{title}</title>
 
-    <!-- Google Analytics -->
-    {siteConfig.googleAnalyticsId && (
+    <!-- Google Analytics (Production only) -->
+    {siteConfig.googleAnalyticsId && import.meta.env.PROD && (
       <>
         <script
           async
@@ -68,6 +68,28 @@ const origin = Astro.url.origin;
           function gtag(){dataLayer.push(arguments);}
           gtag('js', new Date());
           gtag('config', gaId);
+
+          // Custom event tracking for data-ga-event attributes
+          if (!window.__gaClickHandlerRegistered) {
+            window.__gaClickHandlerRegistered = true;
+            document.addEventListener("click", (e) => {
+              const target = e.target.closest?.("[data-ga-event]");
+              if (!target || typeof gtag !== "function") return;
+
+              const eventName = target.dataset.gaEvent;
+              if (!eventName) return;
+
+              const params = {};
+              for (const [key, value] of Object.entries(target.dataset)) {
+                if (key === "gaEvent") continue;
+                // Convert camelCase to snake_case for GA
+                const snakeKey = key.replace(/([A-Z])/g, "_$1").toLowerCase();
+                params[snakeKey] = value;
+              }
+
+              gtag("event", eventName, params);
+            }, { capture: true });
+          }
         </script>
       </>
     )}
