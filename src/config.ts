@@ -93,6 +93,8 @@ export interface SiteConfig {
   extraLinks: ExtraLinks;
   /** Sections visibility configuration (Hero is always visible) */
   sections: SectionsConfig;
+  /** Google Analytics Measurement ID (e.g., 'G-XXXXXXXXXX') */
+  googleAnalyticsId?: string;
 }
 
 /**
@@ -154,4 +156,5 @@ export const siteConfig: SiteConfig = {
     hackathons: false,
     contact: true,
   },
+  googleAnalyticsId: "G-Y8HP4V327W",
 };

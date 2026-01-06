@@ -56,6 +56,22 @@ const origin = Astro.url.origin;
     
     <title>{title}</title>
 
+    <!-- Google Analytics -->
+    {siteConfig.googleAnalyticsId && (
+      <>
+        <script
+          async
+          src={`https://www.googletagmanager.com/gtag/js?id=${siteConfig.googleAnalyticsId}`}
+        ></script>
+        <script is:inline define:vars={{ gaId: siteConfig.googleAnalyticsId }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', gaId);
+        </script>
+      </>
+    )}
+
     <!-- View Transitions -->
     <ClientRouter />
 
